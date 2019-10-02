@@ -21,4 +21,14 @@ public class LevelEditor : MonoBehaviour
     {
         myFactory.GetNewInstanceSpike();
     }
+
+    public void AddVWall()
+    {
+        myFactory.GetNewInstanceVWall();
+    }
+
+    public void AddHWall()
+    {
+        myFactory.GetNewInstanceHWall();
+    }
 }
