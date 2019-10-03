@@ -23,7 +23,9 @@ public class PluginReader : MonoBehaviour
         rb = Player.GetComponent<Rigidbody>();
     }
 
-    void Update()
+    float PosX, PosY, PosZ;
+    
+    void Start()
     {
        if (Input.GetKeyDown(KeyCode.T))
        {
