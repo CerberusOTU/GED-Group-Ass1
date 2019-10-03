@@ -8,9 +8,9 @@ int SimpleFunction()
 	return simpleClass.SimpleFunction();
 }
 
-void SaveFunction(float PosX, float PosY, float PosZ)
+void SaveFunction(Vec3 objects[], int size)
 {
-	return simpleClass.SaveFunction(PosX, PosY, PosZ);
+	return simpleClass.SaveFunction(objects, size);
 }
 
 Vec3 LoadFunction()

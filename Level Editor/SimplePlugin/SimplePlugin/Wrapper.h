@@ -7,7 +7,7 @@ extern "C"
 #endif
 	// Put your functions here
 	PLUGIN_API int SimpleFunction();
-	PLUGIN_API void SaveFunction(float PosX, float PosY, float PosZ);
+	PLUGIN_API void SaveFunction(Vec3 objects[], int size);
 	PLUGIN_API Vec3 LoadFunction();
 #ifdef __cplusplus
 }

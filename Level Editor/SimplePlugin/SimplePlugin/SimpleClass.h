@@ -15,7 +15,7 @@ class PLUGIN_API SimpleClass
 public:
 
 	int SimpleFunction();
-	void SaveFunction(float PosX, float PosY, float PosZ);
+	void SaveFunction(Vec3 objects[], int size);
 	Vec3 LoadFunction();
 
 	Vec3 location;

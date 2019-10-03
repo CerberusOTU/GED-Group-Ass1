@@ -5,56 +5,56 @@ using System.Runtime.InteropServices;
 
 public class PluginReader : MonoBehaviour
 {
-     const string DLL_NAME = "SIMPLEPLUGIN";
+    /*  const string DLL_NAME = "SIMPLEPLUGIN";
     [DllImport(DLL_NAME)]
     private static extern int TestFunction();
-    //[DllImport(DLL_NAME)]
-   // private static extern int SaveFunction(float x, float y, float z);
-    //[DllImport(DLL_NAME)]
-    //private static extern Vector3 LoadFunction();
+    [DllImport(DLL_NAME)]
+     private static extern int SaveFunction(ref Vector3[] objects,ref int size);
+    [DllImport(DLL_NAME)]
+    private static extern Vector3 LoadFunction();
 
-    //public GameObject Player;
-    //private Rigidbody rb;
+    public GameObject Player;
+    private Rigidbody rb;
 
-    //float PosX, PosY, PosZ;
+    float PosX, PosY, PosZ;
     
-    //void Start()
-    //{
-    //    rb = Player.GetComponent<Rigidbody>();
-    //}
+    void Start()
+    {
+        rb = Player.GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
        if (Input.GetKeyDown(KeyCode.T))
        {
-            Debug.Log(TestFunction());
+            //Debug.Log(TestFunction());
        }
 
-       //       if (Input.GetKeyDown(KeyCode.T))
-       //{
-       //     PosX = rb.GetComponent<Rigidbody>().position.x;
-       //     PosY = rb.GetComponent<Rigidbody>().position.y;
-       //     PosZ = rb.GetComponent<Rigidbody>().position.z;
-//
-       //     Debug.Log("Save to file test");
-       //     SaveFunction(PosX, PosY, PosZ);
-       //     Debug.Log(TestFunction());
-           // Debug.Log(PosX + " : " + PosY + " : " + PosZ + " : ");
-      // }
+              if (Input.GetKeyDown(KeyCode.T))
+       {
+            //PosX = rb.GetComponent<Rigidbody>().position.x;
+           // PosY = rb.GetComponent<Rigidbody>().position.y;
+            //PosZ = rb.GetComponent<Rigidbody>().position.z;
 
-       // if (Input.GetKeyDown(KeyCode.L))
-       //{
-       //   Vector3 loc = LoadFunction();
+            //Debug.Log("Save to file test");
+            //SaveFunction(objects);
+            //Debug.Log(TestFunction());
+            //Debug.Log(PosX + " : " + PosY + " : " + PosZ + " : ");
+       }
 
-      //  Debug.Log(loc.x);
-       // Debug.Log(loc.y);
-       // Debug.Log(loc.z);
+       if (Input.GetKeyDown(KeyCode.L))
+       {
+          //Vector3 loc = LoadFunction();
 
-       // Player.GetComponent<Rigidbody>().position = new Vector3(loc.x, loc.y, loc.z);
+         // Debug.Log(loc.x);
+          //Debug.Log(loc.y);
+         // Debug.Log(loc.z);
 
-       // rb.GetComponent<Rigidbody>().position = new Vector3(PosX, PosY, PosZ);
+          //Player.GetComponent<Rigidbody>().position = new Vector3(loc.x, loc.y, loc.z);
 
-            //Debug.Log(LoadFunction());
-       //}
-    }
+         // rb.GetComponent<Rigidbody>().position = new Vector3(PosX, PosY, PosZ);
+
+          //Debug.Log(LoadFunction());
+       }
+    } */
 }
