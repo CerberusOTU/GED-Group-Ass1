@@ -48,6 +48,7 @@ public class PluginReader : MonoBehaviour
   ///Remove from update and place in execute function.!--
  if (Input.GetKeyDown(KeyCode.O))
  {
+    objectsPos.Clear();
     //Transform obj = GetComponent<Transform>();
     for (int i=0;i<objs.Count;i++)
     {
@@ -57,6 +58,7 @@ public class PluginReader : MonoBehaviour
     }
     //objects.Add(new Vector4(transform.localPosition.x,transform.localPosition.y,transform.localPosition.z,1));
     MarshallArraySave(objectsPos.ToArray(), objectsPos.Count);
+    Debug.Log(objectsPos.ToArray());
  }
  }
 }
