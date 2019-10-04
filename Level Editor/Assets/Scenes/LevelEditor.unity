@@ -283,7 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940d630311093d44ea2f3922ecda85e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Box: {fileID: 8064720140831924619, guid: 33b1a628c2fd01f488ad2c8968e48a1a, type: 3}
+  objectsPos: []
+  objs: []
 --- !u!114 &272296829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,7 +797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940d630311093d44ea2f3922ecda85e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Box: {fileID: 8064720140831924619, guid: 33b1a628c2fd01f488ad2c8968e48a1a, type: 3}
+  objectsPos: []
+  objs: []
 --- !u!222 &853913271
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -949,6 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd5394dfbe5bad47a60b000dde5d0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pluginDll: {fileID: 0}
   Box: {fileID: 8064720140831924619, guid: 33b1a628c2fd01f488ad2c8968e48a1a, type: 3}
   Spike: {fileID: 4082100401758970244, guid: 66c627cffc55369459c9017a21e3c682, type: 3}
   VerticalWall: {fileID: 8700265826349814642, guid: 744f6acf2bdfe6b4eb628605f4d49cb1,
@@ -956,7 +959,6 @@ MonoBehaviour:
   HorizontalWall: {fileID: 5448816005920689690, guid: 310ee84c71c0d034ebe5a6f00c810280,
     type: 3}
   ObjectCount: 0
-  Objects: []
 --- !u!114 &976353858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,6 +1075,7 @@ GameObject:
   - component: {fileID: 982783345}
   - component: {fileID: 982783344}
   - component: {fileID: 982783348}
+  - component: {fileID: 982783349}
   m_Layer: 5
   m_Name: Box
   m_TagString: Untagged
@@ -1214,12 +1217,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd5394dfbe5bad47a60b000dde5d0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pluginDll: {fileID: 982783349}
   Box: {fileID: 8064720140831924619, guid: 33b1a628c2fd01f488ad2c8968e48a1a, type: 3}
   Spike: {fileID: 4082100401758970244, guid: 66c627cffc55369459c9017a21e3c682, type: 3}
   VerticalWall: {fileID: 0}
   HorizontalWall: {fileID: 0}
   ObjectCount: 0
-  Objects: []
+--- !u!114 &982783349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982783342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940d630311093d44ea2f3922ecda85e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsPos: []
+  objs: []
 --- !u!1 &1063268648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd5394dfbe5bad47a60b000dde5d0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pluginDll: {fileID: 0}
   Box: {fileID: 8064720140831924619, guid: 33b1a628c2fd01f488ad2c8968e48a1a, type: 3}
   Spike: {fileID: 4082100401758970244, guid: 66c627cffc55369459c9017a21e3c682, type: 3}
   VerticalWall: {fileID: 8700265826349814642, guid: 744f6acf2bdfe6b4eb628605f4d49cb1,
@@ -1588,7 +1606,6 @@ MonoBehaviour:
   HorizontalWall: {fileID: 5448816005920689690, guid: 310ee84c71c0d034ebe5a6f00c810280,
     type: 3}
   ObjectCount: 0
-  Objects: []
 --- !u!114 &1360243782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1927,6 +1944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd5394dfbe5bad47a60b000dde5d0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pluginDll: {fileID: 0}
   Box: {fileID: 8064720140831924619, guid: 33b1a628c2fd01f488ad2c8968e48a1a, type: 3}
   Spike: {fileID: 4082100401758970244, guid: 66c627cffc55369459c9017a21e3c682, type: 3}
   VerticalWall: {fileID: 8700265826349814642, guid: 744f6acf2bdfe6b4eb628605f4d49cb1,
@@ -1934,7 +1952,6 @@ MonoBehaviour:
   HorizontalWall: {fileID: 5448816005920689690, guid: 310ee84c71c0d034ebe5a6f00c810280,
     type: 3}
   ObjectCount: 0
-  Objects: []
 --- !u!114 &1558098833
 MonoBehaviour:
   m_ObjectHideFlags: 0

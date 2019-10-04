@@ -2,61 +2,61 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
-
 public class PluginReader : MonoBehaviour
 {
-    /*  const string DLL_NAME = "SIMPLEPLUGIN";
-    [DllImport(DLL_NAME)]
-    private static extern int TestFunction();
-    [DllImport(DLL_NAME)]
-     private static extern int SaveFunction(ref Vector3[] objects,ref int size);
-    [DllImport(DLL_NAME)]
-    private static extern Vector3 LoadFunction();
+ const string DLL_NAME = "SimplePlugin";
+ [DllImport(DLL_NAME)]
+ private static extern int SimpleFunction();
+[DllImport(DLL_NAME)]
+ private static extern int SimpleSave(float x, float y, float z);
+[DllImport(DLL_NAME)]
+ private static extern Vector3 SimpleLoad();
 
-    public GameObject Player;
-    private Rigidbody rb;
+ [DllImport(DLL_NAME)]
+ static extern void MarshallArraySave([In, Out] Vector4[] vecArray, int vecSize);
 
-    float PosX, PosY, PosZ;
-    
-    void Start()
+ //GameObject box;
+    float px,py,pz;
+    public List<Vector4> objectsPos = new List<Vector4>();
+    public List<GameObject> objs = new List<GameObject>();
+
+ void start(){
+ }
+
+ void Update()
+ {
+ if (Input.GetKeyDown(KeyCode.C))
+ {
+    Debug.Log(SimpleFunction());
+ }
+
+ if (Input.GetKeyDown(KeyCode.DownArrow))
+ {
+      //px = box.transform.localPosition.x;
+      //py = box.transform.localPosition.y;
+      //pz = box.transform.localPosition.z;
+
+      //SimpleSave(px,py,pz);s
+ }
+
+ if (Input.GetKeyDown(KeyCode.UpArrow))
+ {
+   //Vector3 position = SimpleLoad();
+   //box.transform.localPosition = position;
+ }
+
+  ///Remove from update and place in execute function.!--
+ if (Input.GetKeyDown(KeyCode.O))
+ {
+    //Transform obj = GetComponent<Transform>();
+    for (int i=0;i<objs.Count;i++)
     {
-        rb = Player.GetComponent<Rigidbody>();
+        objectsPos.Add(new Vector4(objs[i].transform.localPosition.x,objs[i].transform.localPosition.y,objs[i].transform.localPosition.z,1));
+        Debug.Log(objectsPos[i]);
+        Debug.Log(objectsPos.Count);
     }
-
-    float PosX, PosY, PosZ;
-    
-    void Start()
-    {
-       if (Input.GetKeyDown(KeyCode.T))
-       {
-            //Debug.Log(TestFunction());
-       }
-
-              if (Input.GetKeyDown(KeyCode.T))
-       {
-            //PosX = rb.GetComponent<Rigidbody>().position.x;
-           // PosY = rb.GetComponent<Rigidbody>().position.y;
-            //PosZ = rb.GetComponent<Rigidbody>().position.z;
-
-            //Debug.Log("Save to file test");
-            //SaveFunction(objects);
-            //Debug.Log(TestFunction());
-            //Debug.Log(PosX + " : " + PosY + " : " + PosZ + " : ");
-       }
-
-       if (Input.GetKeyDown(KeyCode.L))
-       {
-          //Vector3 loc = LoadFunction();
-
-         // Debug.Log(loc.x);
-          //Debug.Log(loc.y);
-         // Debug.Log(loc.z);
-
-          //Player.GetComponent<Rigidbody>().position = new Vector3(loc.x, loc.y, loc.z);
-
-         // rb.GetComponent<Rigidbody>().position = new Vector3(PosX, PosY, PosZ);
-
-          //Debug.Log(LoadFunction());
-       }
-    } */
+    //objects.Add(new Vector4(transform.localPosition.x,transform.localPosition.y,transform.localPosition.z,1));
+    MarshallArraySave(objectsPos.ToArray(), objectsPos.Count);
+ }
+ }
 }
