@@ -27,19 +27,6 @@ void Start()
    player.SetActive(false);
    dragAndDrop.SetActive(true);
 }
- 
-public void Load()
-{
-   Debug.Log("Camera Switch");
-   cam.GetComponent<Camera>().orthographic = false;
-   GameObject.Find("Main Camera").transform.position = new Vector3(15.89f, 8.62f, -21.69f);
-   GameObject.Find("Main Camera").transform.rotation = Quaternion.Euler(45,0,0);
-
-   dragAndDrop.SetActive(false);
-   player.SetActive(true);
-   canvas.SetActive(false);
-   //CanvasObject.Find("Canvas").SetActive(false);
-}
 
  void Update()
  {
@@ -59,6 +46,15 @@ public void Load()
 
    if (Input.GetKeyDown(KeyCode.UpArrow))
    {
+   Debug.Log("Camera Switch");
+   cam.GetComponent<Camera>().orthographic = false;
+   GameObject.Find("Main Camera").transform.position = new Vector3(15.89f, 8.62f, -21.69f);
+   GameObject.Find("Main Camera").transform.rotation = Quaternion.Euler(45,0,0);
+
+   dragAndDrop.SetActive(false);
+   player.SetActive(true);
+   canvas.SetActive(false);
+
       int size = ObjectsArrayLoad();
       Debug.Log(size);
       Marshal.Copy(getPosition(), position , 0, size);

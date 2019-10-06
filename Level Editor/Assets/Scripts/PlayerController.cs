@@ -4,7 +4,7 @@
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 3f;
+    private float speed = 2f;
 
     private PlayerMotor motor;
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            speed = 3f;
+            speed = 2f;
         }
 
         //calculate movement velocity as 3D vec
