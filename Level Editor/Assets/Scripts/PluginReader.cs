@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
+
 public class PluginReader : MonoBehaviour
 {
  const string DLL_NAME = "SimplePlugin";
@@ -17,11 +18,31 @@ public class PluginReader : MonoBehaviour
 
  //GameObject box;
     float px,py,pz;
+    public GameObject canvas;
+    public GameObject player;
+    public Camera cam;
+    public GameObject dragAndDrop;
     public List<Vector4> objectsPos = new List<Vector4>();
     public List<GameObject> objs = new List<GameObject>();
 
- void start(){
- }
+void Start()
+{
+   player.SetActive(false);
+   dragAndDrop.SetActive(true);
+}
+ 
+public void Load()
+{
+   Debug.Log("Camera Switch");
+   cam.GetComponent<Camera>().orthographic = false;
+   GameObject.Find("Main Camera").transform.position = new Vector3(15.89f, 8.62f, -21.69f);
+   GameObject.Find("Main Camera").transform.rotation = Quaternion.Euler(45,0,0);
+
+   dragAndDrop.SetActive(false);
+   player.SetActive(true);
+   canvas.SetActive(false);
+   //CanvasObject.Find("Canvas").SetActive(false);
+}
 
  void Update()
  {

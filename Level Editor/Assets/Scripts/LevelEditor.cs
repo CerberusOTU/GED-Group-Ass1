@@ -5,13 +5,14 @@ using UnityEngine;
 public class LevelEditor : MonoBehaviour
 {
     private Factory myFactory; 
-
+    public bool orthographic;
 
     // Start is called before the first frame update
     void Start()
     {
         myFactory = GetComponent<Factory>();
     }
+
 
     public void AddBox()
     {
