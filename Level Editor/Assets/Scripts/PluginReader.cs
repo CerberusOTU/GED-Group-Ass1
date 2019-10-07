@@ -5,20 +5,23 @@ using System.Runtime.InteropServices;
 
 public class PluginReader : MonoBehaviour
 {
-   const string DLL_NAME = "SimplePlugin";
+   const string DLL_NAME = "MyFirstPlugin";
    [DllImport(DLL_NAME)]
-   static extern int ObjectsArrayLoad();
+   private static extern void ObjectsArrayLoad();
    [DllImport(DLL_NAME)]
-   static extern void MarshallArraySave([In, Out] Vector3[] vecArray, int vecSize);
+   static extern int SimpleFunction();
    [DllImport(DLL_NAME)]
-   static extern System.IntPtr getPosition();
+   private static extern void MarshallArraySave([In, Out] Vector3[] vecArray, int vecSize);
+   [DllImport(DLL_NAME)]
+   private static extern System.IntPtr getPosition();
 
-   float[] position;
+    float[] position = new float[36];
     float px,py,pz;
     public GameObject canvas;
     public GameObject player;
     public Camera cam;
     public GameObject dragAndDrop;
+    private Factory factory;
     public List<Vector3> objectsPos = new List<Vector3>();
     public List<GameObject> objs = new List<GameObject>();
 
@@ -26,10 +29,16 @@ void Start()
 {
    player.SetActive(false);
    dragAndDrop.SetActive(true);
+   factory = GetComponent<Factory>();
 }
 
  void Update()
  {
+   if (Input.GetKeyDown(KeyCode.O))
+   {
+      Debug.Log(SimpleFunction());
+   }
+
    if (Input.GetKeyDown(KeyCode.DownArrow))
    {
       objectsPos.Clear();
@@ -55,13 +64,18 @@ void Start()
    player.SetActive(true);
    canvas.SetActive(false);
 
-      int size = ObjectsArrayLoad();
-      Debug.Log(size);
-      Marshal.Copy(getPosition(), position , 0, size);
 
-      for (int i = 0; i<(size); i+=3)
+
+
+      //int size = ObjectsArrayLoad();
+      //Debug.Log(factory.ObjectCount);
+      ObjectsArrayLoad();
+      Marshal.Copy(getPosition(), position , 0, 36);
+
+      for (int i = 0; i<(factory.ObjectCount * 3); i+=3)
       {
-         objs[i].transform.localPosition = new Vector3(position[i], position[i+1], position[i+2]);
+         Debug.Log(new Vector3(position[i], position[i+1], position[i+2]));
+         objs[i/3].transform.localPosition = new Vector3(position[i], position[i+1], position[i+2]);
       }
    }
  }
